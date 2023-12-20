@@ -68,8 +68,8 @@ python manage.py authenticate_user <username> <password>
 ```
 Reemplaza <username> y <password> con las credenciales que deseas probar (ejemplo las credenciales del super usuario)
 <p>
-<em>Nota: Recuerde que el servidor debe estar inicializado, así que abra una nueva terminal y ejecute el comando</a>🤓</em>
-</p>
+<em>Nota: Recuerde que el servidor debe estar inicializado, así que abra una nueva terminal y ejecute el comando</a></em>
+</p>🤓
 
 * Haz clic en "Send" para realizar la solicitud.
 
