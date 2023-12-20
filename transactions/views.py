@@ -2,15 +2,11 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework import status
-from .models import Payment
-from django.http import JsonResponse
 from rest_framework.permissions import AllowAny
 from django.db import IntegrityError
 from .serializers import PaymentSerializer
 
 @api_view(['POST'])
-@authentication_classes([]) 
-@permission_classes([AllowAny])
 def paymentProcess(request):
     try: 
         serializer = PaymentSerializer(data=request.data)
