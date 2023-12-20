@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.validators import MinValueValidator
-
 # Create your models here.
 class Payment(models.Model):
     name = models.CharField(max_length=255,verbose_name='Nombre')
@@ -18,10 +17,10 @@ class Payment(models.Model):
         retencion_rate = 0.015  # 1.5%
 
         # Calcular la retención en la fuente
-        retencion_amount = self.total_value * retencion_rate
+        retencion_amount = float(self.total_value) * retencion_rate
 
         # Restar la retención al total
-        total_after_retencion = self.total_value - retencion_amount
+        total_after_retencion = float(self.total_value) - retencion_amount
 
         # Calcular la comisión sin IVA
         comission_without_iva = total_after_retencion * comission_rate
