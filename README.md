@@ -59,10 +59,20 @@ python manage.py runserver
     "card_number": "12345678585",
     "card_cvv": "125",
     "total_value": 1,
-    "extra_description": "Test 3 postman"
+    "extra_description": "Test postman"
 }
 ```
+* En la pestaña de "Authorization" de Postman, selecione Bearer Token donde el Token lo optendra de la siguiente manera
+```bash
+python manage.py authenticate_user <username> <password>
+```
+Reemplaza <username> y <password> con las credenciales que deseas probar (ejemplo las credenciales del super usuario)
+<p>
+<em>Nota: Recuerde que el servidor debe estar inicializado, así que abra una nueva terminal y ejecute el comando</a>🤓</em>
+</p>
+
 * Haz clic en "Send" para realizar la solicitud.
+
 
 ## Contribuir
 Este es un proyecto un prueba de como poder realizar un simulador de pagos, aún así las solicitudes Pull requests son bienvenidas. 
