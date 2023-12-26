@@ -1,6 +1,6 @@
 # Simulador de pagos con tarjeta de crédito.
 
-API Rest usando Django (Python).
+API Rest usando Django (Python) con Docker
 
 ## Instalación
 Cree un entorno virtual en Python, puede utilizar la herramienta venv, donde nombre_del_entorno es el nombre que le deseas dar al entorno virtual. 
@@ -20,31 +20,12 @@ Clone el repositorio
 ```bash
 git clone git@github.com:lihuesom/api_payment.git
 ```
-Instale las dependencias
+Cree el contenedor de docker
 ```bash
-pip install -r requirements.txt
+docker-compose build
+docker-compose up -d
 ```
-Ejecute las migraciones
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-Cree un super usuario (Opcional): 
-Siga los pasos de [docs.djangoproject](https://docs.djangoproject.com/en/1.8/intro/tutorial02/)
 
-
-Cambie las credenciales a su base de datos PostgreSQL en el archivo .env
-```python
-DB_DEFAULT_NAME = BD_name
-DB_DEFAULT_USER = user_name
-DB_DEFAULT_PASSWORD= pass
-DB_DEFAULT_HOST = localhost
-DB_DEFAULT_PORT = 5432
-```
-Inicie el Servidor de Desarrollo:
-```bash
-python manage.py runserver
-```
 ## Uso
 ### Abrir Postman
 * Abra Postman y cree una nueva solicitud POST.
@@ -63,10 +44,19 @@ python manage.py runserver
 }
 ```
 * En la pestaña de "Authorization" de Postman, selecione Bearer Token donde el Token lo optendra de la siguiente manera
+- Ingrese al contenerdor a la terminal del contenedor desde Docker Desktop
+
+Si no estás utilizando Docker Desktop, puedes usar el siguiente comando para ejecutar un shell dentro de un contenedor:
+```bash
+docker ps
+docker exec -it <nombre_del_contenedor_o_id> /bin/sh
+```
+
+- Opten el token
 ```bash
 python manage.py authenticate_user <username> <password>
 ```
-Reemplaza <username> y <password> con las credenciales que deseas probar (ejemplo las credenciales del super usuario)
+Reemplaza <username> y <password> con las credenciales que deseas probar (ejemplo las credenciales del super usuario) (Usuario admin en docker-compose.yml)
 <p>
 <em>Nota: Recuerde que el servidor debe estar inicializado, así que abra una nueva terminal y ejecute el comando</a></em>
 </p>🤓

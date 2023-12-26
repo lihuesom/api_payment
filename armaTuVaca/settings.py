@@ -101,11 +101,11 @@ DATABASES = {
     #}
     'default': {
         'ENGINE': env('DB_DEFAULT_ENGINE'),
-        'NAME': env('DB_DEFAULT_NAME'),
-        'USER': env('DB_DEFAULT_USER'),
-        'PASSWORD': env('DB_DEFAULT_PASSWORD'),
-        'HOST': env('DB_DEFAULT_HOST'),
-        'PORT': env('DB_DEFAULT_PORT'),
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('DATABASE_HOST'),
+        'PORT': '5432',
     },
 }
 
